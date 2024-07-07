@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Vagas de Trabalho - Mika Alimentos</title>
+    <link rel="stylesheet" href="VAGADEMATU.CSS">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+</head>
+<body>
+    <div class="navbar">
+        <img src="MIKALOGOTIPO.png" alt="Mika Logo">
+        <div>
+            <a href="#">A empresa</a>
+            <a href="#">Banco de talentos</a>
+        </div>
+    </div>
+    
+    <div class="container vaga">
+        <h2>Estagiário de Manutenção</h2>
+        <div class="descricao">
+            <h3>Descrição:</h3>
+            <ul>
+                <li>Ensino Superior ou Técnico cursando em: Eletrotécnica, Automação Industrial, Eletromecânica, Mecatrônica ou áreas correlatas.</li>
+                <li>Atua como auxiliar nas atividades de manutenção, avaliando condições de funcionamento e desempenho de máquinas e equipamentos;</li>
+                <li>Lubrificar máquinas, componentes e ferramentas;</li>
+                <li>Documentar informações técnicas, fazer a manutenção preventiva e corretiva em máquinas e equipamentos.</li>
+            </ul>
+        </div>
+        <div class="requisitos">
+            <h3>Requisitos:</h3>
+            <ul>
+                <li>Ensino Técnico</li>
+            </ul>
+        </div>
+        <div class="beneficios">
+            <h3>Benefícios:</h3>
+            <ul>
+                <li>Bolsa de estágio</li>
+                <li>VT + Refeição no local</li>
+                <li>Seguro de vida</li>
+            </ul>
+        </div>
+    
+        <button onclick="showSuccessMessage()">Quero me candidatar</button>
+    </div>
+    
+    <div id="success-message" class="success-message">Sucesso! Bem-vindo(a) à Mika Alimentos!</div>
+    
+    <script>
+        function showSuccessMessage() {
+            const message = document.getElementById('success-message');
+            message.style.display = 'block';
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>

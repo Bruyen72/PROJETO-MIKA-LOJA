@@ -1,0 +1,426 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Dados Pessoais</title>
+    <link rel="stylesheet" href="style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+                    
+        * {
+            margin: 0;
+            padding: 0;
+            border: none;
+            box-sizing: border-box;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-image: linear-gradient(135deg, #e3fc06 2%, #ee1808 66%);
+            overflow-x: hidden;
+            margin: 0;
+        }
+
+        .navbar {
+            width: 100%;
+            background: linear-gradient(90deg, #FFFF00, #FF0000);
+            padding: 10px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 100;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            padding: 0;
+            margin: 0 auto;
+        }
+
+        .navbar ul li {
+            margin: 0 15px;
+        }
+
+        .navbar ul li a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        .navbar ul li a:hover {
+            color: #000;
+        }
+
+        .cart-logo {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+
+        .cart-logo img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 20px;
+            margin-top: 80px;
+            width: 100%;
+        }
+
+        .progress-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            margin-bottom: 20px;
+            position: relative;
+        }
+
+        .progress-container::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background-color: #ddd;
+            z-index: 0;
+            transform: translateY(-50%);
+        }
+
+        .progress-container .progress {
+            position: absolute;
+            top: 50%;
+            left: 0;
+            height: 4px;
+            background-color: #4CAF50;
+            z-index: 1;
+            transition: width 0.3s ease;
+            transform: translateY(-50%);
+        }
+
+        .progress-step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 10px;
+            z-index: 2;
+        }
+
+        .progress-step .bullet {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 30px;
+            height: 30px;
+            background-color: #ddd;
+            border-radius: 50%;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .progress-step.active .bullet {
+            background-color: #4CAF50;
+        }
+
+        .progress-step .title {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .progress-step.active .title {
+            color: #4CAF50;
+        }
+
+        .form-section {
+            display: none;
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .form-section.active {
+            display: block;
+        }
+
+        .form-section button {
+            background-color: #FF0000;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .form-section button:hover {
+            background-color: #e60000;
+        }
+
+        .form-section .form-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+
+        .form-section .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+
+        .form-section .form-group input {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+
+        .form-section .form-group span {
+            color: red;
+            font-size: 12px;
+        }
+
+        .resumo-compra {
+            width: 100%;
+            max-width: 600px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .resumo-compra h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .resumo-compra ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .resumo-compra ul li {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 10px;
+        }
+
+        .resumo-compra ul li img {
+            width: 50px;
+            height: 50px;
+            object-fit: cover;
+            margin-right: 10px;
+        }
+
+        .resumo-compra ul li div {
+            flex-grow: 1;
+            display: flex;
+            justify-content: space-between;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="NOSSOSPRODUTO.HTML">Nossos Produtos</a></li>
+            <li><a href="FALETRABALHO.HTML">Trabalhe Conosco</a></li>
+        </ul>
+        <div class="cart-logo">
+            <img src="CARRINHO LOGOTIPO.png" alt="Carrinho">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="progress-container">
+            <div class="progress-step active">
+                <div class="bullet">1</div>
+                <div class="title">Carrinho</div>
+            </div>
+            <div class="progress active"></div>
+            <div class="progress-step">
+                <div class="bullet">2</div>
+                <div class="title">Dados</div>
+            </div>
+            <div class="progress"></div>
+            <div class="progress-step">
+                <div class="bullet">3</div>
+                <div class="title">Entrega</div>
+            </div>
+            <div class="progress"></div>
+            <div class="progress-step">
+                <div class="bullet">4</div>
+                <div class="title">Pagamento</div>
+            </div>
+        </div>
+
+        <div class="resumo-compra">
+            <h2>Resumo da Compra</h2>
+            <ul id="resumo-carrinho"></ul>
+            <p>Total: R$ <span id="total"></span></p>
+        </div>
+
+        <div class="form-section active">
+            <h2>Carrinho</h2>
+            <button onclick="nextStep()">Próximo</button>
+        </div>
+        <div class="form-section">
+            <h2>Dados Pessoais</h2>
+            <div class="form-group">
+                <label for="email">E-mail</label>
+                <input type="email" id="email" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="primeiro-nome">Primeiro nome</label>
+                <input type="text" id="primeiro-nome" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="ultimo-nome">Último nome</label>
+                <input type="text" id="ultimo-nome" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="cpf">CPF</label>
+                <input type="text" id="cpf" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="telefone">Telefone</label>
+                <input type="text" id="telefone" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="pessoa-juridica">
+                    Incluir dados de pessoa jurídica
+                </label>
+            </div>
+            <div class="form-group">
+                <label>
+                    <input type="checkbox" id="novidades">
+                    Quero receber e-mails com novidades.
+                </label>
+            </div>
+            <button onclick="prevStep()">Voltar</button>
+            <button onclick="nextStep()">Próximo</button>
+        </div>
+        <div class="form-section">
+            <h2>Entrega</h2>
+            <div class="form-group">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="endereco">Endereço</label>
+                <input type="text" id="endereco" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="numero">Número</label>
+                <input type="text" id="numero" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="complemento">Casa/Apartamento</label>
+                <input type="text" id="complemento">
+            </div>
+            <div class="form-group">
+                <label for="bairro">Bairro</label>
+                <input type="text" id="bairro" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="cidade">Cidade</label>
+                <input type="text" id="cidade" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <div class="form-group">
+                <label for="estado">Estado</label>
+                <input type="text" id="estado" required>
+                <span class="campo-obrigatorio">Campo obrigatório.</span>
+            </div>
+            <button onclick="prevStep()">Voltar</button>
+            <button onclick="nextStep()">Próximo</button>
+        </div>
+        <div class="form-section">
+            <h2>Pagamento</h2>
+            <button onclick="prevStep()">Voltar</button>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script>
+        const progressSteps = document.querySelectorAll(".progress-step");
+        const formSections = document.querySelectorAll(".form-section");
+        let currentStep = 0;
+
+        function updateStep(step) {
+            formSections[currentStep].classList.remove("active");
+            progressSteps[currentStep].classList.remove("active");
+            if (step >= 0 && step < formSections.length) {
+                currentStep = step;
+                formSections[currentStep].classList.add("active");
+                progressSteps[currentStep].classList.add("active");
+                document.querySelector(".progress.active").style.width = `${(currentStep / (formSections.length - 1)) * 100}%`;
+            }
+        }
+
+        function nextStep() {
+            updateStep(currentStep + 1);
+        }
+
+        function prevStep() {
+            updateStep(currentStep - 1);
+        }
+
+        function finalizarCompra() {
+            alert("Compra finalizada com sucesso!");
+        }
+
+        function carregarResumoCarrinho() {
+            const resumoCarrinhoElement = document.getElementById('resumo-carrinho');
+            const totalElement = document.getElementById('total');
+            const carrinho = JSON.parse(localStorage.getItem('carrinho')) || [];
+            let total = 0;
+
+            resumoCarrinhoElement.innerHTML = '';
+            carrinho.forEach(item => {
+                const li = document.createElement('li');
+                li.innerHTML = `<img src="${item.imagem}" alt="${item.nome}"><div>${item.nome} - R$ ${item.preco.toFixed(2)} x ${item.quantidade}</div>`;
+                resumoCarrinhoElement.appendChild(li);
+                total += item.preco * item.quantidade;
+            });
+
+            totalElement.innerText = total.toFixed(2);
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            updateStep(currentStep);
+            carregarResumoCarrinho();
+        });
+    </script>
+</body>
+</html>

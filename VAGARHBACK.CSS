@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+
+@keyframes zoomIn {
+    0% {
+        transform: scale(0.8);
+        opacity: 0;
+    }
+    100% {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f5f5f5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px;
+    animation: zoomIn 0.6s;
+}
+
+.navbar {
+    width: 100%;
+    background: #fff;
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.navbar img {
+    height: 50px;
+    margin-left: 20px;
+}
+
+.navbar a {
+    color: #333;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: bold;
+}
+
+.container {
+    width: 100%;
+    max-width: 800px;
+    background: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+}
+
+.vaga {
+    margin-bottom: 40px;
+}
+
+.vaga h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.vaga .descricao, .vaga .requisitos, .vaga .beneficios, .vaga .localizacao {
+    background: #f9f9f9;
+    padding: 15px;
+    border-radius: 6px;
+    margin-bottom: 10px;
+}
+
+.vaga .descricao h3, .vaga .requisitos h3, .vaga .beneficios h3, .vaga .localizacao h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.vaga .descricao ul, .vaga .requisitos ul, .vaga .beneficios ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.vaga .descricao ul li, .vaga .requisitos ul li, .vaga .beneficios ul li {
+    margin-bottom: 5px;
+}
+
+.vaga button {
+    background: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.vaga button:hover {
+    background: #45a049;
+}
+
+.vaga .localizacao {
+    display: flex;
+    align-items: center;
+    font-size: 14px;
+}
+
+.vaga .localizacao img {
+    margin-right: 10px;
+}
+
+.success-message {
+    display: none;
+    background: #dff0d8;
+    color: #3c763d;
+    padding: 10px 15px;
+    border-radius: 5px;
+    margin-top: 20px;
+    text-align: center;
+}

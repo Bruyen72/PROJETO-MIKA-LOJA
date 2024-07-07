@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Animações de Movimento</title>
+    <style>
+        .caixa {
+            width: 100px;
+            height: 100px;
+            background-color: #333;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px;
+        }
+
+        .caixa.move-left {
+            animation: moveLeft 2s ease-in-out;
+        }
+
+        .caixa.move-right {
+            animation: moveRight 2s ease-in-out;
+        }
+
+        .caixa.move-up {
+            animation: moveUp 2s ease-in-out;
+        }
+
+        .caixa.move-down {
+            animation: moveDown 2s ease-in-out;
+        }
+
+        @keyframes moveLeft {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-200px); }
+        }
+
+        @keyframes moveRight {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(200px); }
+        }
+
+        @keyframes moveUp {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-200px); }
+        }
+
+        @keyframes moveDown {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(200px); }
+        }
+    </style>
+</head>
+<body>
+    <table style="margin-top: 150px; margin-left: 600px;">
+        <tr>
+            <td>
+                <div class="caixa move-left">Move Left</div>
+            </td>
+            <td>
+                <div class="caixa move-right">Move Right</div>
+            </td>
+        </tr>
+        <tr>
+            <td>
+                <div class="caixa move-up">Move Up</div>
+            </td>
+            <td>
+                <div class="caixa move-down">Move Down</div>
+            </td>
+        </tr>
+    </table>
+</body>
+</html>

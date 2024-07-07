@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Nossos Produtos</title>
+    <link rel="stylesheet" href="PRODUTOS.CSS">
+    <!-- Boxicons CDN Link -->
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+</head>
+<body>
+    <div class="navbar">
+        <ul>
+            <li><a href="index.html">Home</a></li>
+            <li><a href="NOSSOSPRODUTO.HTML">Nossos Produtos</a></li>
+            <li><a href="FALETRABALHO.HTML">Trabalhe Conosco</a></li>
+        </ul>
+        <div class="cart-logo" onclick="toggleCarrinho()">
+            <img src="CARRINHO LOGOTIPO.png" alt="Carrinho">
+        </div>
+    </div>
+
+    <div class="container">
+        <div class="cartao-produto" data-id="1" data-nome="PIPOCA PREMIUM" data-preco="4.00">
+            <div class="logo-carrinho">
+                <img src="MIKALOGOTIPO.png" alt="logo">
+                <i class='bx bx-shopping-bag'></i>
+            </div>
+            <div class="imagens-principais">
+                <img id="pipoca" class="pipoca ativo" src="PIPOCAMIKA.png" alt="pipoca">
+            </div>
+            <div class="detalhes-produto">
+                <span class="nome-produto">PIPOCA PREMIUM</span>
+                <P><STRONG>PREÇO : R$ 4,00</STRONG></P>
+                <div class="estrelas">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="botao">
+                <div class="camada-botao"></div>
+                <button onclick="adicionarAoCarrinho(this)">ADICIONAR</button>
+            </div>
+        </div>
+
+        <div class="cartao-produto" data-id="2" data-nome="Polvilho Doce" data-preco="4.00">
+            <div class="logo-carrinho">
+                <img src="MIKALOGOTIPO.png" alt="logo">
+                <i class='bx bx-shopping-bag'></i>
+            </div>
+            <div class="imagens-principais">
+                <img id="polvilho" class="polvilho ativo" src="mikapolvinhodoce.png" alt="polvilho">
+            </div>
+            <div class="detalhes-produto">
+                <span class="nome-produto">Polvilho Doce</span>
+                <P><STRONG>PREÇO : R$ 4,00</STRONG></P>
+                <div class="estrelas">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="botao">
+                <div class="camada-botao"></div>
+                <button onclick="adicionarAoCarrinho(this)">ADICIONAR</button>
+            </div>
+        </div>
+
+        <div class="cartao-produto" data-id="3" data-nome="Canela em Pó" data-preco="2.00">
+            <div class="logo-carrinho">
+                <img src="MIKALOGOTIPO.png" alt="logo">
+                <i class='bx bx-shopping-bag'></i>
+            </div>
+            <div class="imagens-principais">
+                <img id="canela mika po" class="canela mika po" src="CANELAMIKAEMPO.png" alt="canela mika po">
+            </div>
+            <div class="detalhes-produto">
+                <span class="nome-produto">Canela em Pó</span>
+                <P><STRONG>PREÇO : R$ 2,00</STRONG></P>
+                <div class="estrelas">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="botao">
+                <div class="camada-botao"></div>
+                <button onclick="adicionarAoCarrinho(this)">ADICIONAR</button>
+            </div>
+        </div>
+
+        <div class="cartao-produto" data-id="4" data-nome="Achocolatado" data-preco="3.50">
+            <div class="logo-carrinho">
+                <img src="MIKALOGOTIPO.png" alt="logo">
+                <i class='bx bx-shopping-bag'></i>
+            </div>
+            <div class="imagens-principais">
+                <img id="achocolatado" class="achocolatado ativo" src="Achocolate-removebg-preview.png" alt="achocolatado">
+            </div>
+            <div class="detalhes-produto">
+                <span class="nome-produto">Achocolatado</span>
+                <P><STRONG>PREÇO : R$ 3,50</STRONG></P>
+                <div class="estrelas">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="botao">
+                <div class="camada-botao"></div>
+                <button onclick="adicionarAoCarrinho(this)">ADICIONAR</button>
+            </div>
+        </div>
+
+        <div class="cartao-produto" data-id="5" data-nome="Sal Churrasco" data-preco="7.00">
+            <div class="logo-carrinho">
+                <img src="MIKALOGOTIPO.png" alt="logo">
+                <i class='bx bx-shopping-bag'></i>
+            </div>
+            <div class="imagens-principais">
+                <img id="sal churrasco" class="sal churrasco ativo" src="mika-sal_churrasco-removebg-preview.png" alt="sal churrasco">
+            </div>
+            <div class="detalhes-produto">
+                <span class="nome-produto">Sal Churrasco</span>
+                <P><STRONG>PREÇO : R$ 7,00</STRONG></P>
+                <div class="estrelas">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="botao">
+                <div class="camada-botao"></div>
+                <button onclick="adicionarAoCarrinho(this)">ADICIONAR</button>
+            </div>
+        </div>
+
+        <div class="cartao-produto" data-id="6" data-nome="Tempero com Pimenta" data-preco="4.00">
+            <div class="logo-carrinho">
+                <img src="MIKALOGOTIPO.png" alt="logo">
+                <i class='bx bx-shopping-bag'></i>
+            </div>
+            <div class="imagens-principais">
+                <img id="tempero pimenta" class="tempero pimenta ativo" src="mika_tempero_completo_com_pimenta-removebg-preview.png" alt="tempero pimenta">
+            </div>
+            <div class="detalhes-produto">
+                <span class="nome-produto">Tempero com Pimenta</span>
+                <P><STRONG>PREÇO : R$ 4,00</STRONG></P>
+                <div class="estrelas">
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bxs-star'></i>
+                    <i class='bx bx-star'></i>
+                </div>
+            </div>
+            <div class="botao">
+                <div class="camada-botao"></div>
+                <button onclick="adicionarAoCarrinho(this)">ADICIONAR</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="carrinho" id="carrinho">
+        <button class="close-btn" onclick="fecharCarrinho()">X</button>
+        <h2>Carrinho</h2>
+        <div id="itens-carrinho"></div>
+        <div class="total">
+            <p>Total: R$ <span id="total">0.00</span></p>
+            <button onclick="finalizarCompra()">Finalizar Compra</button>
+        </div>
+    </div>
+
+    <script>
+         
+         let carrinho = [];
+        const carrinhoElement = document.getElementById('carrinho');
+        const itensCarrinhoElement = document.getElementById('itens-carrinho');
+        const totalElement = document.getElementById('total');
+
+        function abrirCarrinho() {
+            carrinhoElement.classList.add('open');
+        }
+
+        function fecharCarrinho() {
+            carrinhoElement.classList.remove('open');
+        }
+
+        function toggleCarrinho() {
+            carrinhoElement.classList.toggle('open');
+        }
+
+        function atualizarCarrinho() {
+            itensCarrinhoElement.innerHTML = '';
+            let total = 0;
+
+            carrinho.forEach(item => {
+                const itemElement = document.createElement('div');
+                itemElement.classList.add('item');
+
+                const imgElement = document.createElement('img');
+                imgElement.src = item.imagem;
+
+                const detailsElement = document.createElement('div');
+                detailsElement.classList.add('details');
+
+                const nomeElement = document.createElement('h3');
+                nomeElement.innerText = item.nome;
+
+                const priceElement = document.createElement('p');
+                priceElement.classList.add('price');
+                priceElement.innerText = `R$ ${item.preco.toFixed(2)}`;
+
+                const quantityElement = document.createElement('div');
+                quantityElement.classList.add('quantity');
+
+                const menosElement = document.createElement('button');
+                menosElement.innerText = '-';
+                menosElement.onclick = () => diminuirQuantidade(item.id);
+
+                const quantidadeElement = document.createElement('span');
+                quantidadeElement.innerText = item.quantidade;
+
+                const maisElement = document.createElement('button');
+                maisElement.innerText = '+';
+                maisElement.onclick = () => aumentarQuantidade(item.id);
+
+                quantityElement.appendChild(menosElement);
+                quantityElement.appendChild(quantidadeElement);
+                quantityElement.appendChild(maisElement);
+
+                detailsElement.appendChild(nomeElement);
+                detailsElement.appendChild(priceElement);
+                detailsElement.appendChild(quantityElement);
+
+                itemElement.appendChild(imgElement);
+                itemElement.appendChild(detailsElement);
+
+                itensCarrinhoElement.appendChild(itemElement);
+
+                total += item.preco * item.quantidade;
+            });
+
+            totalElement.innerText = total.toFixed(2);
+            localStorage.setItem('carrinho', JSON.stringify(carrinho));
+        }
+
+        function adicionarAoCarrinho(button) {
+            const card = button.closest('.cartao-produto');
+            const id = card.getAttribute('data-id');
+            const nome = card.getAttribute('data-nome');
+            const preco = parseFloat(card.getAttribute('data-preco'));
+            const imagem = card.querySelector('.imagens-principais img').src;
+
+            const itemExistente = carrinho.find(item => item.id === id);
+
+            if (itemExistente) {
+                itemExistente.quantidade++;
+            } else {
+                const item = { id, nome, preco, imagem, quantidade: 1 };
+                carrinho.push(item);
+            }
+
+            atualizarCarrinho();
+            abrirCarrinho();
+        }
+
+        function aumentarQuantidade(id) {
+            const item = carrinho.find(item => item.id === id);
+            if (item) {
+                item.quantidade++;
+                atualizarCarrinho();
+            }
+        }
+
+        function diminuirQuantidade(id) {
+            const item = carrinho.find(item => item.id === id);
+            if (item) {
+                item.quantidade--;
+                if (item.quantidade === 0) {
+                    carrinho = carrinho.filter(item => item.id !== id);
+                }
+                atualizarCarrinho();
+            }
+        }
+
+        function finalizarCompra() {
+            window.location.href = 'Pessoaldados.html';
+        }
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const carrinhoSalvo = localStorage.getItem('carrinho');
+            if (carrinhoSalvo) {
+                carrinho = JSON.parse(carrinhoSalvo);
+                atualizarCarrinho();
+            }
+        });
+    </script>
+</body>
+</html>

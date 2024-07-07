@@ -1,0 +1,332 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    animation: fadeIn 1.5s ease-in-out, moveDown 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes moveDown {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(0); }
+}
+
+header, main, footer {
+    animation: fadeIn 1.5s ease-in-out, moveDown 2s ease-in-out;
+}
+
+header {
+    background-color: #fdd835;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    position: relative;
+}
+
+.logo img {
+    height: 50px;
+}
+
+nav {
+    display: flex;
+    align-items: center;
+    flex-grow: 1;
+    justify-content: center;
+}
+
+nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #000;
+    font-weight: bold;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+}
+
+nav a::after {
+    content: '';
+    width: 0;
+    height: 2px;
+    background: #d32f2f;
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+    transition: width 0.3s;
+}
+
+nav a:hover::after {
+    width: 100%;
+}
+
+.social-media {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.social-media a img {
+    height: 30px;
+    transition: transform 0.3s;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.social-media a img:hover {
+    transform: scale(1.1);
+}
+
+.banner-carousel {
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+}
+
+.carousel {
+    display: flex;
+    animation: fadeIn 1.5s ease-in-out, moveDown 2s ease-in-out;
+}
+
+.banner {
+    width: 100%;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: -6px;
+}
+
+.banner img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+}
+
+.section-contatos {
+    background-color: #fdd835;
+    color: #000;
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeIn 1.5s ease-in-out, moveDown 2s ease-in-out;
+}
+
+.section-contatos p {
+    margin: 5px 0;
+}
+
+.produtos {
+    background-color: #d32f2f;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+    animation: fadeIn 1.5s ease-in-out, moveDown 2s ease-in-out;
+}
+
+.produtos h2 {
+    font-size: 2em;
+    margin: 0;
+}
+
+.produtos p {
+    margin: 0 0 20px;
+
+}
+
+.produtos_slides {
+    width: 80%;
+    margin: 0 auto;
+    position: relative;
+}
+
+.produto {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: transform 0.3s;
+    animation: fadeIn 1.5s ease-in-out, moveDown 2s ease-in-out;
+}
+
+.produto:hover {
+    transform: scale(1.05);
+}
+
+.produto a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-decoration: none;
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+}
+
+.produto span {
+    color: #fff;
+    font-size: 1em;
+    margin-top: 10px;
+    text-align: center;
+    margin-left: -250px;
+}
+
+.slick-prev, .slick-next {
+    background: none;
+    border: none;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1;
+}
+
+.slick-prev {
+    left: -50px;
+}
+
+.slick-next {
+    right: -50px;
+}
+
+.slick-prev img, .slick-next img {
+    width: 30px;
+    height: 30px;
+}
+
+.slick-prev:hover, .slick-next:hover {
+    background: none;
+}
+
+.slick-list, .slick-track {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+
+.menu-icon div {
+    width: 25px;
+    height: 3px;
+    background-color: #000;
+    margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block;
+        margin-left: 200px;
+    }
+
+    nav ul {
+        display: none;
+        flex-direction: column;
+        width: 100%;
+        background-color: #fdd835;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        padding: 10px 0;
+        z-index: 2;
+    }
+
+    nav ul.show {
+        display: flex;
+    }
+
+    nav ul li {
+        width: 100%;
+        text-align: center;
+        margin: 5px 0;
+    }
+
+    .social-media {
+        display: none; /* Esconder em dispositivos móveis */
+    }
+
+    footer .social-media {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .banner-carousel {
+        width: 103%;
+    }
+
+    .carousel {
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .banner {
+        height: auto;
+    }
+
+    .produtos_slides {
+        width: 75%;
+        position: relative;
+    }
+
+    .produto {
+        width: 2%;
+    }
+
+    .slick-prev, .slick-next {
+        left: -50px;
+        right: auto;
+        top: 50%;
+        bottom: auto;
+        transform: translateY(-50%);
+        z-index: 1;
+    }
+
+    .slick-next {
+        right: -35px;
+        left: auto;
+    }
+
+    .section-contatos {
+        background-color: #d32f2f;
+        color: #fff;
+      
+    }
+
+    .produtos{
+        height: 100%;
+        width: 100%;
+    }
+    .produto span {
+        color: #fff;
+        font-size: 1em;
+        text-align: center;
+        margin-left: -85px;
+
+        
+    }
+}
+
+footer {
+    background-color: #d32f2f;
+    color: #fff;
+    text-align: center;
+    padding: 20px 0;
+}
+
+footer .social-media {
+    justify-content: center;
+    margin-top: 10px;
+}

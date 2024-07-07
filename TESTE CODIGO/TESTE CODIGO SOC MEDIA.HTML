@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mídia Social</title>
+    <style>
+        .social-media a img {
+            height: 30px;
+            transition: transform 0.3s;
+            animation: fadeIn 2s ease-in-out;
+        }
+
+        .social-media a img:hover {
+            transform: scale(1.1);
+        }
+
+        @keyframes fadeIn {
+            0% {
+                opacity: 0;
+            }
+            100% {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="social-media">
+        <a href="#"><img src="facebook.png" alt="Facebook"></a>
+        <a href="#"><img src="twitter.png" alt="Twitter"></a>
+        <a href="#"><img src="instagram.png" alt="Instagram"></a>
+    </div>
+</body>
+</html>

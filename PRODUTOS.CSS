@@ -1,0 +1,375 @@
+/* Google Fonts Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-image: linear-gradient(135deg, #e3fc06 2%, #ee1808 66%);
+    overflow-x: hidden;
+}
+
+.navbar {
+    width: 100%;
+    background: linear-gradient(90deg, #FFFF00, #FF0000);
+    padding: 10px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    animation: slideInDown 1s ease forwards;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.navbar ul li {
+    margin: 0 15px;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.navbar ul li a:hover {
+    color: #000;
+}
+
+.cart-logo {
+    margin-right: 20px;
+    cursor: pointer;
+}
+
+.cart-logo img {
+    width: 40px;
+    height: 40px;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    max-width: 1200px;
+    margin-top: 80px; /* Espaço para a navbar */
+    padding: 20px;
+    animation: fadeIn 1.5s ease forwards;
+}
+
+.cartao-produto {
+    position: relative;
+    width: 30%;
+    padding: 20px;
+    border-radius: 20px;
+    background: #ffffff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+    margin: 10px;
+    animation: zoomIn 1s ease forwards;
+}
+
+.cartao-produto .logo-carrinho {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.cartao-produto .logo-carrinho img {
+    height: 30px;
+    width: 65px;
+    object-fit: cover;
+}
+
+.cartao-produto .logo-carrinho i {
+    font-size: 27px;
+    color: #707070;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.cartao-produto .logo-carrinho i:hover {
+    color: #333;
+}
+
+.cartao-produto .imagens-principais {
+    position: relative;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cartao-produto .imagens-principais img {
+    max-height: 100%;
+    max-width: 100%;
+    object-fit: cover;
+}
+
+.cartao-produto .detalhes-produto .nome-produto {
+    font-size: 16px;
+    font-weight: 500;
+    color: #161616;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.cartao-produto .detalhes-produto p {
+    font-size: 12px;
+    font-weight: 400;
+    color: #333;
+    text-align: justify;
+}
+
+.cartao-produto .detalhes-produto .estrelas {
+    display: flex;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.cartao-produto .detalhes-produto .estrelas i {
+    margin: 0 1px;
+    color: #FFD700;
+}
+
+.cartao-produto .botao {
+    position: relative;
+    height: 40px;
+    width: 100%;
+    border-radius: 20px;
+    margin-top: 10px;
+    overflow: hidden;
+}
+
+.cartao-produto .botao .camada-botao {
+    position: absolute;
+    height: 100%;
+    width: 300%;
+    left: -100%;
+    background-image: linear-gradient(135deg, #ff0000, #ffff00, #ff0101, #fffb00);
+    transition: all 0.4s ease;
+    border-radius: 20px;
+}
+
+.cartao-produto .botao:hover .camada-botao {
+    left: 0;
+}
+
+.cartao-produto .botao button {
+    position: relative;
+    height: 100%;
+    width: 100%;
+    background: none;
+    outline: none;
+    border: none;
+    font-size: 14px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #000000;
+    cursor: pointer;
+}
+
+/* Carrinho */
+.carrinho {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 300px;
+    height: 100vh;
+    background: #fff;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.2);
+    padding: 20px;
+    transform: translateX(100%);
+    transition: transform 0.3s ease-in-out;
+    z-index: 101; /* Certifique-se de que o carrinho fique acima da navbar */
+}
+
+.carrinho.open {
+    transform: translateX(0);
+}
+.carrinho .close-btn {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    background: none;
+    border: none;
+}
+
+.carrinho h2 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.carrinho .item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.carrinho .item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+}
+
+.carrinho .item .details {
+    flex: 1;
+    margin-left: 10px;
+}
+
+.carrinho .item .details h3 {
+    margin-bottom: 5px;
+    font-size: 16px;
+}
+
+.carrinho .item .details .price {
+    font-size: 14px;
+    color: #888;
+}
+
+.carrinho .item .details .quantity {
+    display: flex;
+    align-items: center;
+}
+
+.carrinho .item .details .quantity span {
+    margin: 0 10px;
+}
+
+.carrinho .total {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.carrinho .total p {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.carrinho .total button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    border: none;
+    background: #ff0000;
+    color: #fff;
+    cursor: pointer;
+}
+
+/* Animações */
+@keyframes slideInDown {
+    from {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes zoomIn {
+    from {
+        transform: scale(0.5);
+        opacity: 0;
+    }
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+/* Ajustes Responsivos para Celulares */
+@media (max-width: 768px) {
+    .navbar {
+       margin-top: 0px;
+        
+    }
+
+    .navbar ul {
+        flex-direction: column;
+    }
+
+    .navbar ul li {
+        margin: 0px 0;
+        margin-top: -0px;
+    }
+
+    .cart-logo {
+        margin: 10px 0;
+        margin-bottom: 0px;
+    }
+
+    .container {
+        margin-top: 120px; /* Ajustar o espaço para a navbar em dispositivos móveis */
+        padding: 10px;
+    }
+
+    .cartao-produto {
+        width: 90%;
+        margin: 10px 0;
+        margin-top: 90px;
+    }
+
+    .cartao-produto .imagens-principais {
+        height: auto;
+    }
+
+    .cartao-produto .imagens-principais img {
+        max-height: 150px;
+    }
+
+    .carrinho {
+        width: 100%;
+        height: 60vh;
+    }
+
+    .carrinho .item img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .carrinho .item .details h3 {
+        font-size: 14px;
+    }
+
+    .carrinho .total p {
+        font-size: 16px;
+    }
+
+    .carrinho .total button {
+        width: 100%;
+        padding: 10px;
+    }
+    .navbar {
+        display: flex;
+    }
+}
+

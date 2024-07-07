@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Vagas de Trabalho - Mika Alimentos</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="VAGARHBACK.CSS">
+</head>
+<body>
+    <div class="navbar">
+        <img src="MIKALOGOTIPO.png" alt="Mika Logo">
+        <div>
+            <a href="#">A empresa</a>
+            <a href="#">Banco de talentos</a>
+        </div>
+    </div>
+    
+    <div class="container vaga">
+        <h2>Assistente Recursos Humanos</h2>
+        <div class="descricao">
+            <h3>Descrição:</h3>
+            <table>
+                <tr>
+                    <th>Localização</th>
+                    <td>Brasil, Cuiabá - MT</td>
+                </tr>
+                <tr>
+                    <th>Modalidade</th>
+                    <td>CLT, Presencial</td>
+                </tr>
+                <tr>
+                    <th>Área</th>
+                    <td>Recursos Humanos</td>
+                </tr>
+                <tr>
+                    <th>Atividades</th>
+                    <td>
+                        <ul>
+                            <li>Atuar na área de Recrutamento e Seleção</li>
+                            <li>Treinamento e desenvolvimento</li>
+                            <li>Controle da abertura de vagas no site</li>
+                            <li>Auxílio nos processos de admissão</li>
+                            <li>Conhecimento em pacote Office</li>
+                            <li>Formação completa ou incompleta nos cursos de Gestão de Recursos Humanos, Gestão de Pessoas ou Psicologia.</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="requisitos">
+            <h3>Requisitos:</h3>
+            <table>
+                <tr>
+                    <th>Escolaridade</th>
+                    <td>
+                        <ul>
+                            <li>Ensino Médio</li>
+                            <li>Graduação</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="beneficios">
+            <h3>Benefícios:</h3>
+            <table>
+                <tr>
+                    <td>
+                        <ul>
+                            <li>Assistência médica</li>
+                            <li>Assistência odontológica</li>
+                            <li>Bonificação</li>
+                            <li>Café da manhã</li>
+                            <li>Convênio com Farmácia</li>
+                            <li>Plano de carreira</li>
+                            <li>Refeitório</li>
+                            <li>Seguro de vida</li>
+                            <li>Vale alimentação</li>
+                            <li>Adiantamento de salário</li>
+                        </ul>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    
+        <button onclick="showSuccessMessage()">Quero me candidatar</button>
+    </div>
+    
+    <div id="success-message" class="success-message">Sucesso! Bem-vindo(a) à Mika Alimentos!</div>
+    
+    <script>
+        function showSuccessMessage() {
+            const message = document.getElementById('success-message');
+            message.style.display = 'block';
+            setTimeout(() => {
+                message.style.display = 'none';
+            }, 3000);
+        }
+    </script>
+</body>
+</html>
